@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Reihe der Schlauheit</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Inter',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#000;
+color:white;
+overflow-x:hidden;
+}
+
+canvas{
+position:fixed;
+top:0;
+left:0;
+z-index:-2;
+}
+
+.hero{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+text-align:center;
+position:relative;
+}
+
+.hero h1{
+font-size:clamp(3rem,8vw,8rem);
+font-weight:900;
+letter-spacing:-4px;
+background:linear-gradient(90deg,#fff,#777,#fff);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+animation:shine 6s linear infinite;
+}
+
+@keyframes shine{
+0%{background-position:-500px;}
+100%{background-position:500px;}
+}
+
+.hero p{
+margin-top:20px;
+font-size:1.2rem;
+opacity:.8;
+}
+
+.scroll{
+position:absolute;
+bottom:40px;
+font-size:.9rem;
+opacity:.6;
+animation:float 2s infinite;
+}
+
+@keyframes float{
+50%{
+transform:translateY(10px);
+}
+}
+
+.section{
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:100px 5%;
+}
+
+.glass{
+width:100%;
+max-width:1400px;
+background:rgba(255,255,255,.05);
+backdrop-filter:blur(20px);
+border:1px solid rgba(255,255,255,.1);
+border-radius:40px;
+padding:50px;
+transform-style:preserve-3d;
+box-shadow:
+0 20px 80px rgba(255,255,255,.05);
+}
+
+.image-showcase{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:30px;
+}
+
+.image-showcase img{
+width:100%;
+height:500px;
+object-fit:cover;
+border-radius:30px;
+transition:1s;
+}
+
+.image-showcase img:hover{
+transform:
+rotateY(10deg)
+rotateX(5deg)
+scale(1.05);
+}
+
+.title{
+font-size:4rem;
+font-weight:900;
+margin-bottom:40px;
+}
+
+.members{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+margin-top:40px;
+}
+
+.card{
+background:rgba(255,255,255,.04);
+border:1px solid rgba(255,255,255,.08);
+border-radius:30px;
+padding:30px;
+transition:.6s;
+transform-style:preserve-3d;
+}
+
+.card:hover{
+transform:
+translateY(-15px)
+rotateX(10deg)
+scale(1.03);
+box-shadow:
+0 30px 80px rgba(255,255,255,.1);
+}
+
+.card h2{
+font-size:1.8rem;
+margin-bottom:10px;
+}
+
+.rank{
+font-size:1rem;
+opacity:.8;
+}
+
+.big{
+font-size:6rem;
+font-weight:900;
+text-align:center;
+opacity:.1;
+margin-top:80px;
+}
+
+footer{
+padding:100px 20px;
+text-align:center;
+opacity:.6;
+}
+
+@media(max-width:900px){
+
+.image-showcase{
+grid-template-columns:1fr;
+}
+
+.image-showcase img{
+height:300px;
+}
+
+.title{
+font-size:2.5rem;
+}
+
+.hero h1{
+font-size:4rem;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<canvas id="bg"></canvas>
+
+<section class="hero">
+
+<h1>REIHE DER SCHLAUHEIT</h1>
+
+<p>Die Elite. Die Legenden. Die Meister.</p>
+
+<div class="scroll">
+⬇ Scrollen
+</div>
+
+</section>
+
+<section class="section">
+
+<div class="glass">
+
+<h2 class="title">Die Mannschaft</h2>
+
+<div class="image-showcase">
+
+<img src="gruppe1.jpg">
+<img src="gruppe2.jpg">
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<div class="glass">
+
+<h2 class="title">Mitglieder</h2>
+
+<div class="members">
+
+<div class="card">
+<h2>Hamza 👑</h2>
+<p class="rank">Der König</p>
+</div>
+
+<div class="card">
+<h2>Jonas 🧠</h2>
+<p class="rank">Der Schlaue</p>
+</div>
+
+<div class="card">
+<h2>Navrup ⚔️</h2>
+<p class="rank">Der Diktator</p>
+</div>
+
+<div class="card">
+<h2>Emil 🔥</h2>
+<p class="rank">Der King</p>
+</div>
+
+<div class="card">
+<h2>Janluca 📚</h2>
+<p class="rank">Der mit den Lösungen</p>
+</div>
+
+<div class="card">
+<h2>Jusuf 🥊</h2>
+<p class="rank">Der Kämpfer</p>
+</div>
+
+<div class="card">
+<h2>Luke 🚀</h2>
+<p class="rank">Der Krasse</p>
+</div>
+
+<div class="card">
+<h2>Joel ⭐</h2>
+<p class="rank">Mitglied der Reihe</p>
+</div>
+
+</div>
+
+<div class="big">
+RDS
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+REIHE DER SCHLAUHEIT © 2026
+
+</footer>
+
+<script>
+
+const canvas=document.getElementById("bg");
+const ctx=canvas.getContext("2d");
+
+canvas.width=window.innerWidth;
+canvas.height=window.innerHeight;
+
+const particles=[];
+
+for(let i=0;i<120;i++){
+particles.push({
+x:Math.random()*canvas.width,
+y:Math.random()*canvas.height,
+r:Math.random()*2,
+dx:(Math.random()-0.5)*0.5,
+dy:(Math.random()-0.5)*0.5
+});
+}
+
+function animate(){
+
+ctx.clearRect(0,0,canvas.width,canvas.height);
+
+particles.forEach(p=>{
+
+p.x+=p.dx;
+p.y+=p.dy;
+
+if(p.x<0||p.x>canvas.width)p.dx*=-1;
+if(p.y<0||p.y>canvas.height)p.dy*=-1;
+
+ctx.beginPath();
+ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+ctx.fillStyle="rgba(255,255,255,.6)";
+ctx.fill();
+
+});
+
+requestAnimationFrame(animate);
+
+}
+
+animate();
+
+window.addEventListener("mousemove",(e)=>{
+
+document.querySelectorAll(".card").forEach(card=>{
+
+const x=(window.innerWidth/2-e.clientX)/35;
+const y=(window.innerHeight/2-e.clientY)/35;
+
+card.style.transform=
+`rotateY(${x}deg) rotateX(${-y}deg)`;
+
+});
+
+});
+
+</script>
+
+</body>
+</html>
